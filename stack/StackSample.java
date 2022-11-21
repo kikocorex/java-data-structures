@@ -2,7 +2,7 @@ package stack;
 
 import java.util.Stack;
 
-public class stackSample {
+public class StackSample {
 
     public static void main(String[] args) {
 
