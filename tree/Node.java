@@ -43,6 +43,11 @@ public class Node {
         }
     }
 
+    public void BFT() {
+
+
+    }
+
     /*
     Inorder (Left, Root, Right)
     */

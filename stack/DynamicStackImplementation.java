@@ -3,11 +3,11 @@ package stack;
 public class DynamicStackImplementation extends StackImplementation{
 
     public DynamicStackImplementation() {
-        super(); // it will call CustomStack()
+        super(); // call CustomStack()
     }
 
     public DynamicStackImplementation(int size) {
-        super(size); // it will call CustomStack(int size)
+        super(size); // call CustomStack(int size)
     }
 
     @Override

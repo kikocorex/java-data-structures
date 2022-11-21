@@ -17,3 +17,5 @@ Deletion
 if u want to delete root there are two cases...
 [1] - inorder predecessor (left) = get largest value from the left sub-tree and change it to root
 [2] - inorder successor (right) = get smallest value from the right sub-tree and change it to root
+
+
