@@ -1,26 +1,27 @@
 package queue;
 
-public class QueueImplementation {
-    private int[] data;
-
+public class CircularQueueImplementation {
+    protected int[] data;
     private static final int DEFAULT_SIZE = 10;
 
-    int end = 0;
+    protected int end = 0;
+    protected int front = 0;
+    private int size = 0;
 
-    public QueueImplementation(){
+    public CircularQueueImplementation(){
         this(DEFAULT_SIZE);
     }
 
-    public QueueImplementation(int size) {
+    public CircularQueueImplementation(int size) {
         this.data = new int[size];
     }
 
     public boolean isFull() {
-        return end == data.length; // ptr is at last index
+        return size == data.length; // ptr is at last index
     }
 
     public boolean isEmpty() {
-        return end == 0;
+        return size == 0;
     }
 
     public boolean insert(int item) {
@@ -28,6 +29,8 @@ public class QueueImplementation {
             return false;
         }
         data[end++] = item;
+        end = end % data.length;
+        size++;
         return true;
     }
 
@@ -36,13 +39,9 @@ public class QueueImplementation {
             throw new Exception("Queue is empty");
         }
 
-        int removed = data[0];
-
-        // shift the elements to left
-        for (int i = 1; i < end; i++) {
-            data[i-1] = data[i];
-        }
-        end--;
+        int removed = data[front++];
+        front = front % data.length;
+        size--;
         return removed;
     }
 
@@ -50,13 +49,20 @@ public class QueueImplementation {
         if (isEmpty()) {
             throw new Exception("Queue is empty");
         }
-        return data[0];
+        return data[front];
     }
 
     public void display() {
-        for (int i = 0; i < end; i++) {
-            System.out.print(data[i] + " <- ");
+        if (isEmpty()) {
+            System.out.println("Empty");
+            return;
         }
+        int i = front;
+        do {
+            System.out.print(data[i] + " -> ");
+            i++;
+            i %= data.length;
+        } while (i != end);
         System.out.println("END");
     }
 
