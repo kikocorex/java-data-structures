@@ -1,0 +1,19 @@
+Binary Tree
+- dapat less than yung asa left ng nodes/root
+- dapat greater than yung asa right ng nodes/root
+
+benefit: easy to locate a node when they are in this order
+
+time complexity:
+best case - O(log n)
+worst case: O(n)
+space complexity: O(n)
+
+Deletion
+[1] - if 0 child
+[2] - if 1 child
+[3] - if 2 child
+
+if u want to delete root there are two cases...
+[1] - inorder predecessor (left) = get largest value from the left sub-tree and change it to root
+[2] - inorder successor (right) = get smallest value from the right sub-tree and change it to root

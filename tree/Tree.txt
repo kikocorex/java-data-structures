@@ -1,9 +1,20 @@
 The tree data structure
 
 - A tree data structure contains a root node, and every node can have a left and right child.
+- Simply, a tree is a collection of nodes that edges(-) that conect them.
+
+Each node can have..
+Parent and Child node
+
+Tree Traversals
+- Reading/Processing the data of node exactly once in some order in a tree
 
 Types of Tree Traversals
 
-Inorder (Left, Root, Right)
-Preorder (Root, Left, Right)
-Postorder (Left, Right, Root)
+Breadth First Traversal (level order)
+ - Reading the data in the nodes of a tree by moving in a level by level fashion
+
+Depth First Traversal
+  -  Inorder (Left, Root, Right)
+  -  Preorder (Root, Left, Right)
+  -  Postorder (Left, Right, Root)
