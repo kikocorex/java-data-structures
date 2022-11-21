@@ -2,7 +2,7 @@ package tree;
 
 public class Node {
     Node left, right;
-    int data;
+    int data; // data/root
 
     Node(int data) {
         this.data = data;
@@ -43,7 +43,11 @@ public class Node {
         }
     }
 
+    /*
+    Inorder (Left, Root, Right)
+    */
     public void printInOrder() {
+
         if (left != null) {
             left.printInOrder();
         }
@@ -52,5 +56,40 @@ public class Node {
         if (right != null) {
             right.printInOrder();
         }
+    }
+
+
+    /*
+    Preorder (Root, Left, Right)
+    */
+    public void printPreOrder() {
+        System.out.println(data);
+
+        if (left != null) {
+            left.printPreOrder();
+        }
+
+        if (right != null) {
+            right.printPreOrder();
+        }
+
+
+    }
+
+    /*
+    Postorder (Left, Right, Root)
+    */
+    public void printPostOrder() {
+
+        if (left != null) {
+            left.printPostOrder();
+        }
+
+        if (right != null) {
+            right.printPostOrder();
+        }
+
+        System.out.println(data);
+
     }
 }
