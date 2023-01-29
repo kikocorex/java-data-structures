@@ -7,3 +7,6 @@ Progress report [0]
 
 11/21/2022 [1]
 - Added new packages, classes and txt.files
+
+1/29/2023
+- Updated classes
